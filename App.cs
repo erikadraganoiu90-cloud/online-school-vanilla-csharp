@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Online School");
+            
+            Guid id= Guid.NewGuid();
+
+            Console.WriteLine(id);
+
+            string id2= Guid.NewGuid().ToString();
+            Console.WriteLine(id2);
         }
     }
 }
