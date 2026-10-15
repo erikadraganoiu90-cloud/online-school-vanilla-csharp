@@ -1,0 +1,5 @@
+ccc5e2fa-debf-4b7c-ba59-6edd63dd2ed8|C# de la zero|Programare|Bazele limbajului C#: variabile, decizii, bucle, functii|40|499.99|20|2026-11-03
+4c96e8f4-7aa6-4b3f-9c1e-6e30465a98ec|Programare orientata pe obiecte|Programare|Clase, obiecte, incapsulare, mostenire|32|450|18|2026-11-17
+eeb9c381-de64-4ee5-b4c3-01c8734e2e1a|SQL si baze de date|Baze de date|Tabele, chei, SELECT, JOIN, GROUP BY|24|350|15|2026-11-10
+e2ce96be-85c3-4eca-9f65-511840b2908c|Docker pentru incepatori|DevOps|Imagini, containere, docker compose|16|300|12|2026-12-01
+0197c826-a255-4dc0-9f9c-53ff9d55d832|React|Frontend|Componente, state, props, apeluri catre API|30|450|18|2027-01-05
