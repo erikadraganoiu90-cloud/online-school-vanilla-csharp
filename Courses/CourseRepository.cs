@@ -4,11 +4,13 @@ namespace online_school
 {
     internal class CourseRepository
     {
-        private string filePath = Path.Combine(AppContext.BaseDirectory, "Courses", "courses.txt");
-        private List<Course> courses = new List<Course>();
+        private string filePath;
+        private List<Course> courses;
 
         public CourseRepository()
         {
+            this.filePath = Path.Combine(AppContext.BaseDirectory, "Courses", "courses.txt");
+            this.courses = new List<Course>();
             Load();
         }
 

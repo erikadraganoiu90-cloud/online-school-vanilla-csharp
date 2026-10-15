@@ -1,16 +1,26 @@
-﻿namespace online_school
+﻿using online_school.Students;
+
+namespace online_school
 {
     internal class App
     {
         static void Main(string[] args)
         {
+
+
             
-            Guid id= Guid.NewGuid();
 
-            Console.WriteLine(id);
+            StudentRepository studentRepository = new StudentRepository();
 
-            string id2= Guid.NewGuid().ToString();
-            Console.WriteLine(id2);
+            studentRepository.Afisare();
+            
+
+
+
+           
+
+
+
         }
     }
 }
