@@ -1,0 +1,20 @@
+﻿1|101|Ion|2026-04-11
+2|101|Moara cu noroc|2026-04-12
+3|103|Baltagul|2026-04-13
+4|104|Enigma Otiliei|2026-04-14
+5|105|Maitreyi|2026-04-15
+6|106|Ultima noapte de dragoste, intia noapte de razboi|2026-04-16
+7|107|Morometii|2026-04-17
+8|108|Cel mai iubit dintre pamanteni|2026-04-18
+9|109|Mara|2026-04-19
+10|110|Padurea spanzuratilor|2026-04-20
+11|111|Maytrei|2026-04-21
+12|101|Lorelei|2026-04-22
+13|113|Invitatie la vals|2026-04-23
+14|114|Elevul Dima dintr-a saptea|2026-04-24
+15|115|Ciresarii|2026-04-25
+16|116|Chira Chiralina|2026-04-26
+17|117|La medeleni|2026-04-27
+18|118|Adam si Eva|2026-04-28
+19|119|Jocurile Daniei|2026-04-29
+20|120|Nunta in cer|2026-04-30

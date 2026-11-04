@@ -8,19 +8,7 @@ namespace online_school
         {
 
 
-            
-
-            StudentRepository studentRepository = new StudentRepository();
-
-            studentRepository.Afisare();
-            
-
-
-
-           
-
-
-
+             
         }
     }
 }
