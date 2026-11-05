@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <None Update="Books\books.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Courses\courses.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

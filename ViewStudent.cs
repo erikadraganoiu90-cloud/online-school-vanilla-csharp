@@ -59,8 +59,7 @@ namespace online_school
 
                 }
             }
-
-
+            
 
         }
 
@@ -74,18 +73,6 @@ namespace online_school
 
         }
 
-        private void TestAddBook(Book book)
-        {
-            bookRepository.Add(book);
-            Book savedBook = bookRepository.GetById(book.Id);
-            if (savedBook != null)
-            {
-                Console.WriteLine("Carte salvata");
-            }
-            else
-            {
-                Console.WriteLine("Carte nesalvata");
-            }
-        }
+         
     }
 }

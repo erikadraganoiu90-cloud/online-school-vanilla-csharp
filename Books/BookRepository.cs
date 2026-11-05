@@ -49,11 +49,12 @@ namespace online_school
             foreach (Book book in books)
             {
                 lines.Add(book.ToString());
-              
 
+               
+                
 
             }
-
+          
             File.WriteAllLines(filePath, lines);
         }
 
@@ -69,11 +70,33 @@ namespace online_school
             }
             return null;
         }
-        public Book Add(Book book)
+        public Book Add(string studentId,string bookName,DateTime createdAt)
         {
-            books.Add(book);
+            //conditii de existenta 
+
+            //verificam unicitatea cartii
+            List<Book> stundentBooks = this.GetByStudentId(studentId);
+
+            foreach(Book book in  stundentBooks)
+            {
+                if (book.BookName.Equals(bookName))
+                {
+                    throw new ArgumentException("Book with same name already assigned to you");
+                }
+            }
+          
+            Book b = new Book(Guid.NewGuid().ToString(),studentId,bookName,createdAt);
+
+            books.Add(b);
+
             Write();
-            return book;
+
+
+            return b;
+
+
+
+  
         }
 
          public List<Book> GetByStudentId(string studentId)
@@ -81,7 +104,7 @@ namespace online_school
             List <Book> studentBooks= new List<Book> ();
             foreach(Book book in books)
             {
-                if (book.StudentId == studentId)
+                if (book.StudentId.Equals(studentId))
                 {
                     studentBooks.Add(book);
                 }
