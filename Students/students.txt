@@ -10,3 +10,9 @@ b8c9d0e1-f2g3-4h4j-5k6l-7m8n9o0p1q2r3s|Maria|Gheorghe|maria.gheorghe@email.com|1
 c9d0e1f2-g3h4-4j5k-6l7m-8n9o0p1q2r3s4t|Gabriel|Marin|gabriel.marin@email.com|50|G@b_Mar50
 d0e1f2g3-h4j5-4k6l-7m8n-9o0p1q2r3s4t5u|Andreea|Vasile|andreea.vasile@email.com|26|V@s_And26
 e1f2g3h4-j5k6-4l7m-8n9o-0p1q2r3s4t5u6v|Cristian|Diaconu|cristian.diaconu@email.com|33|Dia_Cr1st3
+1aa57bbb-01e0-41ba-b103-ac50b7a73710|Bianca|Matei|bianca.matei@email.com|19|B1@nc4_M
+8e85a40a-f62a-46b1-a2cb-8dcf05c62023|Vlad|Serban|vlad.serban@email.com|22|Vl@d_S22
+0621bd47-62f7-419d-8a44-345c7e9d4e3b|Diana|Pavel|diana.pavel@email.com|17|D!ana_P17
+daabd6b9-7ed3-411c-bf6e-39d9e67dbdf6|Robert|Enache|robert.enache@email.com|28|R0b#Ena28
+dade224d-cf15-4f4f-bcb3-defee5767ea6|Larisa|Toma|larisa.toma@email.com|31|L@r_Toma31
+64a9357c-647e-4860-b6e1-ae0fc0ef05bb|Paul|Neagu|paul.neagu@email.com|45|P@ul_N45

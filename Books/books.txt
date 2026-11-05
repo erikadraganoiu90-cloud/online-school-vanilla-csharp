@@ -1,21 +1,47 @@
-2|101|Moara cu noroc|2026-04-12
-3|103|Baltagul|2026-04-13
-4|104|Enigma Otiliei|2026-04-14
-5|105|Maitreyi|2026-04-15
-6|106|Ultima noapte de dragoste, intia noapte de razboi|2026-04-16
-7|107|Morometii|2026-04-17
-8|108|Cel mai iubit dintre pamanteni|2026-04-18
-9|109|Mara|2026-04-19
-10|110|Padurea spanzuratilor|2026-04-20
-11|111|Maytrei|2026-04-21
-12|101|Lorelei|2026-04-22
-13|113|Invitatie la vals|2026-04-23
-14|114|Elevul Dima dintr-a saptea|2026-04-24
-15|115|Ciresarii|2026-04-25
-16|116|Chira Chiralina|2026-04-26
-17|117|La medeleni|2026-04-27
-18|118|Adam si Eva|2026-04-28
-19|119|Jocurile Daniei|2026-04-29
-ac87d174-47de-4ee7-b018-da8d3111e006|101|Chira Chiralina|2026-11-05
-ea7f73ba-6237-4d3e-aa9d-cf675968efa0|101|Ciresarii|2026-11-05
-74e85576-9ce8-418e-9212-18ba158980c5|101|tarzan|2026-11-05
+2|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Moara cu noroc|2026-04-12
+3|a1b2c3d4-e5f6-4a7b-8c9d-0e14h5h3h4j5k6|Baltagul|2026-04-13
+4|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|Enigma Otiliei|2026-04-14
+5|c3d4e5f6-a7b8-4c9d-0e1f-2g3h4j5k6l7m8n|Maitreyi|2026-04-15
+6|d4e5f6a7-b8c9-4d0e-1f2g-3h4j5k6l7m8n9o|Ultima noapte de dragoste, intia noapte de razboi|2026-04-16
+7|e5f6a7b8-c9d0-4e1f-2g3h-4j5k6l7m8n9o0p|Morometii|2026-04-17
+8|f6a7b8c9-d0e1-4f2g-3h4j-5k6l7m8n9o0p1q|Cel mai iubit dintre pamanteni|2026-04-18
+9|a7b8c9d0-e1f2-4g3h-4j5k-6l7m8n9o0p1q2r|Mara|2026-04-19
+10|b8c9d0e1-f2g3-4h4j-5k6l-7m8n9o0p1q2r3s|Padurea spanzuratilor|2026-04-20
+11|c9d0e1f2-g3h4-4j5k-6l7m-8n9o0p1q2r3s4t|Maytrei|2026-04-21
+12|d0e1f2g3-h4j5-4k6l-7m8n-9o0p1q2r3s4t5u|Lorelei|2026-04-22
+13|e1f2g3h4-j5k6-4l7m-8n9o-0p1q2r3s4t5u6v|Invitatie la vals|2026-04-23
+14|1aa57bbb-01e0-41ba-b103-ac50b7a73710|Elevul Dima dintr-a saptea|2026-04-24
+15|8e85a40a-f62a-46b1-a2cb-8dcf05c62023|Ciresarii|2026-04-25
+16|0621bd47-62f7-419d-8a44-345c7e9d4e3b|Chira Chiralina|2026-04-26
+17|daabd6b9-7ed3-411c-bf6e-39d9e67dbdf6|La medeleni|2026-04-27
+18|dade224d-cf15-4f4f-bcb3-defee5767ea6|Adam si Eva|2026-04-28
+19|64a9357c-647e-4860-b6e1-ae0fc0ef05bb|Jocurile Daniei|2026-04-29
+ac87d174-47de-4ee7-b018-da8d3111e006|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Chira Chiralina|2026-11-05
+ea7f73ba-6237-4d3e-aa9d-cf675968efa0|a1b2c3d4-e5f6-4a7b-8c9d-0e14h5h3h4j5k6|Ciresarii|2026-11-05
+74e85576-9ce8-418e-9212-18ba158980c5|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|tarzan|2026-11-05
+ac01358e-35aa-463f-b8e9-c66d73cd8fad|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Ultima noapte de dragoste, intaia noapte de razboi|2026-10-17
+d0c4ceea-c6f7-47d2-95c0-8bf06f8ad0a4|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Plumb|2026-11-07
+e04db24d-c6fb-4f07-b736-05e9dfd9d99b|a1b2c3d4-e5f6-4a7b-8c9d-0e14h5h3h4j5k6|Maitreyi|2026-10-21
+a4c76114-0b2b-4005-afea-6b7a441b515f|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|Mara|2026-10-05
+79c9c4ef-71d3-4e74-bdaa-3cfc6b7fc1b6|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|Enigma Otiliei|2026-09-18
+43d3812a-bae8-4c94-86a9-6758944bfef4|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|Plumb|2026-11-21
+335ed91c-9f5d-4a47-8c29-d7ec3bd79bf9|c3d4e5f6-a7b8-4c9d-0e1f-2g3h4j5k6l7m8n|O scrisoare pierduta|2026-10-21
+911cd9b3-4b2a-40d9-8d30-60fe4f6ba6fd|d4e5f6a7-b8c9-4d0e-1f2g-3h4j5k6l7m8n9o|Mara|2026-09-02
+b3d2c406-4fb1-42c0-8f1a-c60686f643d1|d4e5f6a7-b8c9-4d0e-1f2g-3h4j5k6l7m8n9o|Ion|2026-09-08
+54e4ab81-6c5f-44c3-9789-b6322a44c584|d4e5f6a7-b8c9-4d0e-1f2g-3h4j5k6l7m8n9o|Baltagul|2026-11-01
+c8a3d0da-4f01-4dd1-88d4-75339a6c2788|e5f6a7b8-c9d0-4e1f-2g3h-4j5k6l7m8n9o0p|Amintiri din copilarie|2026-11-27
+ec529564-36ea-45be-bd15-4c1191481695|e5f6a7b8-c9d0-4e1f-2g3h-4j5k6l7m8n9o0p|Plumb|2026-09-17
+b8eec91e-022e-4378-a80e-6b4ee62e6a1c|f6a7b8c9-d0e1-4f2g-3h4j-5k6l7m8n9o0p1q|Adam si Eva|2026-10-01
+340201c9-24d2-4a16-af3c-9bb76dc80ee3|a7b8c9d0-e1f2-4g3h-4j5k-6l7m8n9o0p1q2r|Baltagul|2026-10-18
+bf35e505-75cf-497a-98ee-f79899bd3ea4|a7b8c9d0-e1f2-4g3h-4j5k-6l7m8n9o0p1q2r|Plumb|2026-09-23
+211878bf-a460-44c2-ad16-62443fb9662d|a7b8c9d0-e1f2-4g3h-4j5k-6l7m8n9o0p1q2r|La medeleni|2026-10-11
+2703b221-078c-465c-a384-2bc4747b5b6d|b8c9d0e1-f2g3-4h4j-5k6l-7m8n9o0p1q2r3s|Maitreyi|2026-10-01
+80936b7d-76d5-4e01-a2ce-88847885cb31|c9d0e1f2-g3h4-4j5k-6l7m-8n9o0p1q2r3s4t|Enigma Otiliei|2026-10-04
+390252a2-f270-44f0-84f0-faad452052ee|1aa57bbb-01e0-41ba-b103-ac50b7a73710|O scrisoare pierduta|2026-09-28
+cc0a9721-893a-40bf-bae3-45267f935f28|1aa57bbb-01e0-41ba-b103-ac50b7a73710|Baltagul|2026-11-01
+180383cf-2574-4e65-b1ca-e33e1c61965b|8e85a40a-f62a-46b1-a2cb-8dcf05c62023|Padurea spanzuratilor|2026-09-16
+3e52b982-f45b-482d-a5f3-e3d94e0d6993|0621bd47-62f7-419d-8a44-345c7e9d4e3b|O scrisoare pierduta|2026-09-19
+f898fdf3-4652-4900-9e64-196fe47969ed|0621bd47-62f7-419d-8a44-345c7e9d4e3b|Harap-Alb|2026-11-07
+439eb88e-f470-4f96-9af2-eba2614c098f|daabd6b9-7ed3-411c-bf6e-39d9e67dbdf6|La medeleni|2026-10-11
+32f45ae6-ee4f-45c0-a80f-69cc15d0f389|daabd6b9-7ed3-411c-bf6e-39d9e67dbdf6|Amintiri din copilarie|2026-09-14
+0fefaf59-7811-443a-a4dd-9002bf797358|daabd6b9-7ed3-411c-bf6e-39d9e67dbdf6|Baltagul|2026-09-05

@@ -3,3 +3,7 @@ ccc5e2fa-debf-4b7c-ba59-6edd63dd2ed8|C# de la zero|Programare|Bazele limbajului 
 eeb9c381-de64-4ee5-b4c3-01c8734e2e1a|SQL si baze de date|Baze de date|Tabele, chei, SELECT, JOIN, GROUP BY|24|350|15|2026-11-10
 e2ce96be-85c3-4eca-9f65-511840b2908c|Docker pentru incepatori|DevOps|Imagini, containere, docker compose|16|300|12|2026-12-01
 0197c826-a255-4dc0-9f9c-53ff9d55d832|React|Frontend|Componente, state, props, apeluri catre API|30|450|18|2027-01-05
+b6bb13c1-550b-4535-9a4d-5c1ab17e9e23|Java de la zero|Programare|Variabile, decizii, bucle, metode|40|499|20|2026-11-24
+2338a848-2e6a-4ec5-977c-de0ceef00c4a|Python pentru incepatori|Programare|Liste, dictionare, functii, fisiere|36|420|25|2026-12-08
+7d0de669-a6a6-4029-b5cf-2db6abdfb92e|Git si GitHub|DevOps|Commit, branch, merge, pull request|12|200|30|2026-11-20
+b10ab4a6-12f8-48be-a18b-ccacde66e335|Angular|Frontend|Componente, servicii, rutare, formulare|32|480|15|2027-01-19
