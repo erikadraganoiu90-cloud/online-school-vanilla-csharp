@@ -1,4 +1,3 @@
-﻿1|101|Ion|2026-04-11
 2|101|Moara cu noroc|2026-04-12
 3|103|Baltagul|2026-04-13
 4|104|Enigma Otiliei|2026-04-14
@@ -17,3 +16,6 @@
 17|117|La medeleni|2026-04-27
 18|118|Adam si Eva|2026-04-28
 19|119|Jocurile Daniei|2026-04-29
+ac87d174-47de-4ee7-b018-da8d3111e006|101|Chira Chiralina|2026-11-05
+ea7f73ba-6237-4d3e-aa9d-cf675968efa0|101|Ciresarii|2026-11-05
+74e85576-9ce8-418e-9212-18ba158980c5|101|tarzan|2026-11-05

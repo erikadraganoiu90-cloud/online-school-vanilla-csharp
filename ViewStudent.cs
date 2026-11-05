@@ -52,9 +52,17 @@ namespace online_school
                     case 1:
                         ShowBooks();
                         break;
+                    case 2:
+                        AddBook();
+                        break;
+                    case 3:
+                        RemoveBook();
+                        break;
+
                     default:
                         Console.WriteLine("invalid value");
                         break;
+                    
                      
 
                 }
@@ -72,6 +80,23 @@ namespace online_school
             }
 
         }
+        private void AddBook()
+        {
+            Console.WriteLine("Numele cartii:");
+            string name = Console.ReadLine();
+            bookRepository.Add(student.id, name, DateTime.Now);
+
+
+
+        }
+        private void RemoveBook()
+        {
+            Console.WriteLine("Numele cartii:");
+            string name = Console.ReadLine();
+            bookRepository.Remove(student.id, name, DateTime.Now);
+        }
+
+
 
          
     }

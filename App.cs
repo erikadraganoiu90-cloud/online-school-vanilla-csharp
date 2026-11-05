@@ -15,7 +15,7 @@ namespace online_school
             try
             {
 
-               Book b= bookRepository.Add("101", "Lorelei2", DateTime.Now);
+                Book b = bookRepository.Remove("101", "Lorelei2", DateTime.Now);
 
 
                 Console.WriteLine(b);
@@ -27,7 +27,11 @@ namespace online_school
 
             }
 
-             
+            Student student = new Student("101|Ana|Popa|ana.popa@email.com|16|P@ssw0rd1! ");
+            ViewStudent view =new ViewStudent(student);
+
+
+
         }
     }
 }

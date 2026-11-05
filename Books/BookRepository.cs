@@ -113,5 +113,21 @@ namespace online_school
            
         }
 
+        public Book Remove(string studentId, string bookName, DateTime createdAt)
+        {
+            List<Book> studentBooks = this.GetByStudentId(studentId);
+            foreach(Book book in studentBooks)
+            {
+                if (book.BookName.Equals(bookName))
+                {
+                    books.Remove(book);
+                    Write();
+                    return book;
+                }
+            }
+            throw new ArgumentException("Book not fund for this student");
+        }
+
+
     }
 }
