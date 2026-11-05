@@ -9,7 +9,7 @@ namespace online_school
 
         public CourseRepository()
         {
-            this.filePath = Path.Combine(AppContext.BaseDirectory, "Courses", "courses.txt");
+            this.filePath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Courses", "courses.txt");
             this.courses = new List<Course>();
             Load();
         }

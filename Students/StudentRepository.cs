@@ -12,7 +12,7 @@ namespace online_school.Students
 
       public StudentRepository()
         {
-            this.filePath = Path.Combine(AppContext.BaseDirectory, "Students", "student.txt");
+            this.filePath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Students", "students.txt");
             this.students=new List<Student>();
             Load();
         }

@@ -14,7 +14,7 @@ namespace online_school
 
         public BookRepository()
         {
-            this.filePath = Path.Combine(AppContext.BaseDirectory, "Books", "books.txt");
+            this.filePath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "Books", "books.txt");
             this.books = new List<Book>();
             Load();
         }
