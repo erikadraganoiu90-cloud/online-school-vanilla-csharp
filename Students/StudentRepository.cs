@@ -104,9 +104,23 @@ namespace online_school.Students
                 Console.WriteLine(student);
             }
         }
-       
-            
-  
+
+        public Student GetByEmail(string email)
+        {
+            foreach (Student student in GetAll())
+            {
+                if (student.Email.Equals(
+                    email,
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    return student;
+                }
+            }
+
+            return null;
+        }
+
+
 
     }
 }

@@ -51,9 +51,55 @@ namespace online_school
 
         public Enrolment Add(Enrolment enrolment)
         {
+            foreach (Enrolment existing in enrolments)
+            {
+                if (existing.StudentId == enrolment.StudentId &&
+                    existing.CourseId == enrolment.CourseId)
+                {
+                    throw new InvalidOperationException(
+                        "Studentul este deja inscris la acest curs."
+                    );
+                }
+            }
+
             enrolments.Add(enrolment);
             Write();
             return enrolment;
         }
+
+        public List<Enrolment> GetByStudentId(string studentId)
+        {
+            List<Enrolment> result = new List<Enrolment>();
+
+            foreach (Enrolment enrolment in GetAll())
+            {
+                if (enrolment.StudentId == studentId)
+                {
+                    result.Add(enrolment);
+                }
+            }
+
+            return result;
+        }
+
+        public Enrolment Remove(string studentId, string courseId)
+        {
+            foreach (Enrolment enrolment in enrolments)
+            {
+                if (enrolment.StudentId.Equals(studentId) &&
+                    enrolment.CourseId.Equals(courseId))
+                {
+                    enrolments.Remove(enrolment);
+                    Write();
+                    return enrolment;
+                }
+            }
+
+            throw new ArgumentException("Enrolment not found for this student and course");
+        }
+
+
+
+
     }
 }

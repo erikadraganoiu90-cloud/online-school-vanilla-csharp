@@ -1,26 +1,7 @@
-2|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Moara cu noroc|2026-04-12
-3|a1b2c3d4-e5f6-4a7b-8c9d-0e14h5h3h4j5k6|Baltagul|2026-04-13
-4|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|Enigma Otiliei|2026-04-14
-5|c3d4e5f6-a7b8-4c9d-0e1f-2g3h4j5k6l7m8n|Maitreyi|2026-04-15
-6|d4e5f6a7-b8c9-4d0e-1f2g-3h4j5k6l7m8n9o|Ultima noapte de dragoste, intia noapte de razboi|2026-04-16
-7|e5f6a7b8-c9d0-4e1f-2g3h-4j5k6l7m8n9o0p|Morometii|2026-04-17
-8|f6a7b8c9-d0e1-4f2g-3h4j-5k6l7m8n9o0p1q|Cel mai iubit dintre pamanteni|2026-04-18
-9|a7b8c9d0-e1f2-4g3h-4j5k-6l7m8n9o0p1q2r|Mara|2026-04-19
-10|b8c9d0e1-f2g3-4h4j-5k6l-7m8n9o0p1q2r3s|Padurea spanzuratilor|2026-04-20
-11|c9d0e1f2-g3h4-4j5k-6l7m-8n9o0p1q2r3s4t|Maytrei|2026-04-21
-12|d0e1f2g3-h4j5-4k6l-7m8n-9o0p1q2r3s4t5u|Lorelei|2026-04-22
-13|e1f2g3h4-j5k6-4l7m-8n9o-0p1q2r3s4t5u6v|Invitatie la vals|2026-04-23
-14|1aa57bbb-01e0-41ba-b103-ac50b7a73710|Elevul Dima dintr-a saptea|2026-04-24
-15|8e85a40a-f62a-46b1-a2cb-8dcf05c62023|Ciresarii|2026-04-25
-16|0621bd47-62f7-419d-8a44-345c7e9d4e3b|Chira Chiralina|2026-04-26
-17|daabd6b9-7ed3-411c-bf6e-39d9e67dbdf6|La medeleni|2026-04-27
-18|dade224d-cf15-4f4f-bcb3-defee5767ea6|Adam si Eva|2026-04-28
-19|64a9357c-647e-4860-b6e1-ae0fc0ef05bb|Jocurile Daniei|2026-04-29
 ac87d174-47de-4ee7-b018-da8d3111e006|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Chira Chiralina|2026-11-05
 ea7f73ba-6237-4d3e-aa9d-cf675968efa0|a1b2c3d4-e5f6-4a7b-8c9d-0e14h5h3h4j5k6|Ciresarii|2026-11-05
 74e85576-9ce8-418e-9212-18ba158980c5|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|tarzan|2026-11-05
 ac01358e-35aa-463f-b8e9-c66d73cd8fad|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Ultima noapte de dragoste, intaia noapte de razboi|2026-10-17
-d0c4ceea-c6f7-47d2-95c0-8bf06f8ad0a4|a1b2c3d4-e5f6-4a7b-8c9d-0e1f2g3h4j5k6l|Plumb|2026-11-07
 e04db24d-c6fb-4f07-b736-05e9dfd9d99b|a1b2c3d4-e5f6-4a7b-8c9d-0e14h5h3h4j5k6|Maitreyi|2026-10-21
 a4c76114-0b2b-4005-afea-6b7a441b515f|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|Mara|2026-10-05
 79c9c4ef-71d3-4e74-bdaa-3cfc6b7fc1b6|b2c3d4e5-f6a7-4b8c-9d0e-1f2g3h4j5k6l7m|Enigma Otiliei|2026-09-18

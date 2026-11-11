@@ -7,28 +7,25 @@ namespace online_school
         static void Main(string[] args)
         {
 
-            Book book = new Book("12|101|Lorelei|2026-04-22");
 
-            BookRepository bookRepository = new BookRepository();
+            StudentRepository studentRepository = new StudentRepository();
 
-
-            try
+            while (true)
             {
+                Console.Write("Email: ");
+                string email = Console.ReadLine();
 
-                Book b = bookRepository.Remove("101", "Lorelei2", DateTime.Now);
+                Student student = studentRepository.GetByEmail(email);
 
+                if (student == null)
+                {
+                    Console.WriteLine("Nu exista un student cu acest email.");
+                    continue;
+                }
 
-                Console.WriteLine(b);
-
+                new ViewStudent(student);
+                break;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-
-            }
-
-            Student student = new Student("101|Ana|Popa|ana.popa@email.com|16|P@ssw0rd1! ");
-            ViewStudent view =new ViewStudent(student);
 
 
 
