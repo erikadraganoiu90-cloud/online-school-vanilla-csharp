@@ -270,6 +270,13 @@ namespace online_school
             {
                 Console.WriteLine(ex.Message);
             }
+            int numberOfStudents = enrolmentRepository.GetStudentsCountByCourseId(selectedCourse.Id);
+            if (numberOfStudents >= selectedCourse.MaxStudents)
+            {
+                Console.WriteLine( "Cursul este plin." );
+                return;
+            }
+
         }
         private void LeaveCourse()
         {

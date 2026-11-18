@@ -79,8 +79,11 @@ namespace online_school.Students
 
         }
 
+         
+
         public Student(string firstName, string lastName, string email, string password, int age)
         {
+            id = Guid.NewGuid().ToString();
             FirstName = firstName;
             LastName = lastName;
             Email = email;

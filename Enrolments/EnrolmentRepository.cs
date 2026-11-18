@@ -97,7 +97,18 @@ namespace online_school
 
             throw new ArgumentException("Enrolment not found for this student and course");
         }
-
+        public int GetStudentsCountByCourseId(string courseId)
+        {
+            int numberOfStudents = 0;
+            foreach(Enrolment enrolment in enrolments)
+            {
+                if (enrolment.CourseId.Equals(courseId))
+                {
+                    numberOfStudents++;
+                }
+            }
+            return numberOfStudents;
+        }
 
 
 
