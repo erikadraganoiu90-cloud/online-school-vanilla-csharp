@@ -1,21 +1,16 @@
 ﻿using online_school.Students;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace online_school
 {
     internal class ViewStudent
     {
+        private const int Width = 64;
+
         private BookRepository bookRepository;
         private CourseRepository courseRepository;
         private EnrolmentRepository enrolmentRepository;
 
         private Student student;
-
-
-
 
         public ViewStudent(Student student)
         {
@@ -24,40 +19,20 @@ namespace online_school
             this.enrolmentRepository = new EnrolmentRepository();
             this.student = student;
             Play();
-
         }
-         
-
-
-        private void Meniu()
-        {
-            Console.WriteLine($"Salut, {student.FirstName} {student.LastName}!");
-            Console.WriteLine("0 -> exit");
-            Console.WriteLine("1->show books");
-            Console.WriteLine("2->add  book");
-            Console.WriteLine("3->remove book");
-            Console.WriteLine("4->show courses");
-            Console.WriteLine("5->show available courses");
-            Console.WriteLine("6 -> enrol");
-            Console.WriteLine("7 -> leave course");
-
-
-        }
-
 
         private void Play()
         {
             bool running = true;
 
-            int alegere = -1;
             while (running)
             {
                 Meniu();
+                Console.Write("  Alege o optiune: ");
 
-                if (!int.TryParse(Console.ReadLine(), out  alegere))
+                if (!int.TryParse(Console.ReadLine(), out int alegere))
                 {
-                    Console.WriteLine("invalid value");
-                    continue;
+                    alegere = -1;
                 }
 
                 switch (alegere)
@@ -86,115 +61,156 @@ namespace online_school
                     case 7:
                         LeaveCourse();
                         break;
-
-
                     default:
-                        Console.WriteLine("invalid value");
+                        Error("Optiune invalida. Alege un numar din meniu.");
+                        Pause();
                         break;
-                    
-                     
-
                 }
             }
-            
 
+            Header("La revedere");
+            Console.WriteLine("  La revedere, " + student.FirstName + "!");
+            Console.WriteLine();
+        }
+
+        private void Meniu()
+        {
+            Header("Meniu");
+
+            Section("CARTI");
+            MenuItem(1, "Cartile mele");
+            MenuItem(2, "Adauga o carte");
+            MenuItem(3, "Sterge o carte");
+            Console.WriteLine();
+
+            Section("CURSURI");
+            MenuItem(4, "Cursurile mele");
+            MenuItem(5, "Cursuri disponibile");
+            MenuItem(6, "Inscrie-te la un curs");
+            MenuItem(7, "Renunta la un curs");
+            Console.WriteLine();
+
+            MenuItem(0, "Iesire");
+            Console.WriteLine();
         }
 
         private void ShowBooks()
         {
-            var books = bookRepository.GetByStudentId(student.id);
-            int number = 0;
+            Header("Cartile mele");
 
-            foreach (Book book in books)
+            List<Book> books = bookRepository.GetByStudentId(student.id);
+
+            if (books.Count == 0)
             {
-                number++;
-                Console.WriteLine(number + ". " + book.BookName + " (" + book.CreatedAt.ToString("yyyy-MM-dd") + ")");
-
-            }
-
-            if (number == 0)
-            {
-                Console.WriteLine("Nu ai nicio carte");
+                Info("Nu ai nicio carte. Adauga una din meniu, optiunea 2.");
+                Pause();
                 return;
             }
 
-            Console.WriteLine("Total: " + number);
-
+            PrintBooks(books);
+            Console.WriteLine();
+            Console.WriteLine("  Total: " + books.Count + " carti");
+            Pause();
         }
 
         private void AddBook()
         {
-            Console.WriteLine("Numele cartii:");
-            string name = Console.ReadLine();
+            Header("Adauga o carte");
+
+            Console.Write("  Numele cartii (Enter gol = inapoi): ");
+            string? name = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(name))
             {
-                Console.WriteLine("Numele cartii nu poate fi gol.");
                 return;
             }
 
             try
             {
-                bookRepository.Add(student.id, name, DateTime.Now);
-                Console.WriteLine("Cartea a fost adaugata.");
+                bookRepository.Add(student.id, name.Trim(), DateTime.Now);
+                Success("Cartea \"" + name.Trim() + "\" a fost adaugata.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Error(ex.Message);
             }
-        }
 
+            Pause();
+        }
 
         private void RemoveBook()
         {
-            Console.WriteLine("Numele cartii:");
-            string name = Console.ReadLine();
+            Header("Sterge o carte");
 
-            try
+            List<Book> books = bookRepository.GetByStudentId(student.id);
+
+            if (books.Count == 0)
             {
-                bookRepository.Remove(student.id, name, DateTime.Now);
-                Console.WriteLine("Cartea a fost stearsa.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-
-        private void ShowCourses()
-        {
-            var enrolments = enrolmentRepository.GetByStudentId(student.id);
-
-
-            if (enrolments.Count == 0)
-            {
-                Console.WriteLine("Nu esti inscris la niciun curs");
+                Info("Nu ai nicio carte de sters.");
+                Pause();
                 return;
             }
 
-            foreach (var enrolment in enrolments)
+            PrintBooks(books);
+
+            int number = ReadNumber("Numarul cartii", books.Count);
+            if (number == 0)
             {
-                var course = courseRepository.GetById(enrolment.CourseId);
-
-                Console.WriteLine(course.Name + " | " + course.StartDate + " | " + enrolment.CreatedAt);
-
-
-
-
+                return;
             }
+
+            Book selectedBook = books[number - 1];
+
+            if (!Confirm("Stergi cartea \"" + selectedBook.BookName + "\"?"))
+            {
+                Info("Nu s-a sters nimic.");
+                Pause();
+                return;
+            }
+
+            try
+            {
+                bookRepository.Remove(student.id, selectedBook.BookName, DateTime.Now);
+                Success("Cartea \"" + selectedBook.BookName + "\" a fost stearsa.");
+            }
+            catch (Exception ex)
+            {
+                Error(ex.Message);
+            }
+
+            Pause();
         }
+
+        private void ShowCourses()
+        {
+            Header("Cursurile mele");
+
+            List<Enrolment> enrolments = enrolmentRepository.GetByStudentId(student.id);
+
+            if (enrolments.Count == 0)
+            {
+                Info("Nu esti inscris la niciun curs. Vezi optiunea 5.");
+                Pause();
+                return;
+            }
+
+            PrintEnrolments(enrolments);
+            Console.WriteLine();
+            Console.WriteLine("  Total: " + enrolments.Count + " cursuri");
+            Pause();
+        }
+
         private List<Course> GetAvailableCourses()
         {
-            var courses = courseRepository.GetAll();
-            var enrolments = enrolmentRepository.GetByStudentId(student.id);
-            var availableCourses = new List<Course>();
+            List<Course> courses = courseRepository.GetAll();
+            List<Enrolment> enrolments = enrolmentRepository.GetByStudentId(student.id);
+            List<Course> availableCourses = new List<Course>();
 
             foreach (Course course in courses)
             {
                 bool isEnrolled = false;
 
-                foreach (var enrolment in enrolments)
+                foreach (Enrolment enrolment in enrolments)
                 {
                     if (enrolment.CourseId == course.Id)
                     {
@@ -214,61 +230,60 @@ namespace online_school
 
         private void ShowAvailableCourses()
         {
-            var availableCourses = GetAvailableCourses();
+            Header("Cursuri disponibile");
+
+            List<Course> availableCourses = GetAvailableCourses();
 
             if (availableCourses.Count == 0)
             {
-                Console.WriteLine("Nu exista cursuri disponibile.");
+                Info("Esti deja inscris la toate cursurile.");
+                Pause();
                 return;
             }
 
-            for (int i = 0; i < availableCourses.Count; i++)
-            {
-                Course course = availableCourses[i];
-                Console.WriteLine((i + 1) + ". " + course.Name + " - " + course.Price + " lei");
-
-            }
+            PrintCourses(availableCourses);
+            Pause();
         }
 
         private void Enrol()
         {
-            var availableCourses = GetAvailableCourses();
+            Header("Inscrie-te la un curs");
+
+            List<Course> availableCourses = GetAvailableCourses();
 
             if (availableCourses.Count == 0)
             {
-                Console.WriteLine("Nu exista cursuri disponibile.");
+                Info("Esti deja inscris la toate cursurile.");
+                Pause();
                 return;
             }
 
-            for (int i = 0; i < availableCourses.Count; i++)
+            PrintCourses(availableCourses);
+
+            int number = ReadNumber("Numarul cursului", availableCourses.Count);
+            if (number == 0)
             {
-                Course course = availableCourses[i];
-                Console.WriteLine((i + 1) + ". " + course.Name + " - " + course.Price + " lei");
-
-            }
-
-            Console.WriteLine("Numarul cursului:");
-            string input = Console.ReadLine();
-
-            if (!int.TryParse(input, out int number) ||
-                number < 1 ||
-                number > availableCourses.Count)
-            {
-                Console.WriteLine("Numar invalid.");
                 return;
             }
 
             Course selectedCourse = availableCourses[number - 1];
 
+            if (!Confirm("Te inscrii la \"" + selectedCourse.Name + "\" (" + selectedCourse.Price + " lei)?"))
+            {
+                Info("Nu s-a facut nicio inscriere.");
+                Pause();
+                return;
+            }
+
             try
             {
-                var enrolment = new Enrolment(student.id, selectedCourse.Id);
+                Enrolment enrolment = new Enrolment(student.id, selectedCourse.Id);
                 enrolmentRepository.Add(enrolment);
-                Console.WriteLine("Inscriere reusita.");
+                Success("Te-ai inscris la \"" + selectedCourse.Name + "\".");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Error(ex.Message);
             }
             int numberOfStudents = enrolmentRepository.GetStudentsCountByCourseId(selectedCourse.Id);
             if (numberOfStudents >= selectedCourse.MaxStudents)
@@ -277,54 +292,201 @@ namespace online_school
                 return;
             }
 
+            Pause();
         }
+
         private void LeaveCourse()
         {
-            var enrolments = enrolmentRepository.GetByStudentId(student.id);
+            Header("Renunta la un curs");
+
+            List<Enrolment> enrolments = enrolmentRepository.GetByStudentId(student.id);
 
             if (enrolments.Count == 0)
             {
-                Console.WriteLine("Nu esti inscris la niciun curs.");
+                Info("Nu esti inscris la niciun curs.");
+                Pause();
                 return;
             }
 
-            for (int i = 0; i < enrolments.Count; i++)
+            PrintEnrolments(enrolments);
+
+            int number = ReadNumber("Numarul cursului", enrolments.Count);
+            if (number == 0)
             {
-                var enrolment = enrolments[i];
-                var course = courseRepository.GetById(enrolment.CourseId);
-
-                Console.WriteLine((i + 1) + ". " + course.Name + " | Inceput: " + course.StartDate + " | " +"Inscriere: " + enrolment.CreatedAt);
-
-            }
-
-            Console.WriteLine("Numarul cursului:");
-
-            if (!int.TryParse(Console.ReadLine(), out int number) ||
-                number < 1 ||
-                number > enrolments.Count)
-            {
-                Console.WriteLine("Numar invalid.");
                 return;
             }
 
-            var selectedEnrolment = enrolments[number - 1];
+            Enrolment selectedEnrolment = enrolments[number - 1];
+            string courseName = CourseName(selectedEnrolment.CourseId);
+
+            if (!Confirm("Renunti la \"" + courseName + "\"?"))
+            {
+                Info("Esti in continuare inscris.");
+                Pause();
+                return;
+            }
 
             try
             {
                 enrolmentRepository.Remove(student.id, selectedEnrolment.CourseId);
-                Console.WriteLine("Inscrierea a fost eliminata.");
+                Success("Ai renuntat la \"" + courseName + "\".");
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Error(ex.Message);
             }
 
+            Pause();
         }
 
+        private void PrintBooks(List<Book> books)
+        {
+            Console.WriteLine("  " + Cell("#", 4) + Cell("Carte", 40) + "Adaugata la");
+            Line('-');
 
+            for (int i = 0; i < books.Count; i++)
+            {
+                Book book = books[i];
+                Console.WriteLine("  " + Cell((i + 1) + ".", 4) + Cell(book.BookName, 40) + book.CreatedAt.ToString("yyyy-MM-dd"));
+            }
+        }
 
+        private void PrintCourses(List<Course> courses)
+        {
+            Console.WriteLine("  " + Cell("#", 4) + Cell("Curs", 32) + Cell("Incepe", 12) + "Pret");
+            Line('-');
 
+            for (int i = 0; i < courses.Count; i++)
+            {
+                Course course = courses[i];
+                Console.WriteLine("  " + Cell((i + 1) + ".", 4) + Cell(course.Name, 32) + Cell(course.StartDate.ToString("yyyy-MM-dd"), 12) + course.Price + " lei");
+            }
+        }
 
+        private void PrintEnrolments(List<Enrolment> enrolments)
+        {
+            Console.WriteLine("  " + Cell("#", 4) + Cell("Curs", 32) + Cell("Incepe", 12) + "Inscris la");
+            Line('-');
 
+            for (int i = 0; i < enrolments.Count; i++)
+            {
+                Enrolment enrolment = enrolments[i];
+                Course? course = courseRepository.GetById(enrolment.CourseId);
+                string startDate = course == null ? "-" : course.StartDate.ToString("yyyy-MM-dd");
+
+                Console.WriteLine("  " + Cell((i + 1) + ".", 4) + Cell(CourseName(enrolment.CourseId), 32) + Cell(startDate, 12) + enrolment.CreatedAt.ToString("yyyy-MM-dd"));
+            }
+        }
+
+        private string CourseName(string courseId)
+        {
+            Course? course = courseRepository.GetById(courseId);
+
+            if (course == null)
+            {
+                return "(curs sters)";
+            }
+
+            return course.Name;
+        }
+
+        private void Header(string title)
+        {
+            if (!Console.IsOutputRedirected)
+            {
+                Console.Clear();
+            }
+
+            string name = student.FirstName + " " + student.LastName;
+
+            Line('=');
+            Console.WriteLine("  ONLINE SCHOOL" + name.PadLeft(Width - 15));
+            Line('=');
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("  " + title);
+            Console.ResetColor();
+            Console.WriteLine();
+        }
+
+        private void Section(string title)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("  " + title);
+            Console.ResetColor();
+        }
+
+        private void MenuItem(int number, string text)
+        {
+            Console.WriteLine("   " + number + "  " + text);
+        }
+
+        private void Line(char character)
+        {
+            Console.WriteLine(new string(character, Width));
+        }
+
+        private string Cell(string text, int width)
+        {
+            if (text.Length >= width)
+            {
+                return text.Substring(0, width - 4) + "... ";
+            }
+
+            return text.PadRight(width);
+        }
+
+        private int ReadNumber(string prompt, int max)
+        {
+            Console.WriteLine();
+
+            while (true)
+            {
+                Console.Write("  " + prompt + " (1-" + max + ", 0 = inapoi): ");
+
+                if (int.TryParse(Console.ReadLine(), out int number) && number >= 0 && number <= max)
+                {
+                    return number;
+                }
+
+                Error("Scrie un numar intre 0 si " + max + ".");
+            }
+        }
+
+        private bool Confirm(string question)
+        {
+            Console.Write("  " + question + " (d/n): ");
+            string? answer = Console.ReadLine();
+
+            return answer != null && answer.Trim().ToLower() == "d";
+        }
+
+        private void Success(string message)
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("  OK  " + message);
+            Console.ResetColor();
+        }
+
+        private void Error(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("  !!  " + message);
+            Console.ResetColor();
+        }
+
+        private void Info(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("  " + message);
+            Console.ResetColor();
+        }
+
+        private void Pause()
+        {
+            Console.WriteLine();
+            Console.Write("  Apasa Enter pentru meniu...");
+            Console.ReadLine();
+        }
     }
 }
