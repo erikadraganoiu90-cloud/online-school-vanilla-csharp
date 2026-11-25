@@ -9,6 +9,8 @@ namespace online_school
         private BookRepository bookRepository;
         private CourseRepository courseRepository;
         private EnrolmentRepository enrolmentRepository;
+        private StudentRepository studentRepository;
+
 
         private Student student;
 
@@ -17,6 +19,8 @@ namespace online_school
             this.bookRepository = new BookRepository();
             this.courseRepository = new CourseRepository();
             this.enrolmentRepository = new EnrolmentRepository();
+            this.studentRepository = new StudentRepository();
+
             this.student = student;
             Play();
         }
@@ -61,6 +65,14 @@ namespace online_school
                     case 7:
                         LeaveCourse();
                         break;
+                    case 8:
+                        ShowTotalPayment();
+                        break;
+
+                    case 9:
+                        ShowProfile();
+                        break;
+
                     default:
                         Error("Optiune invalida. Alege un numar din meniu.");
                         Pause();
@@ -88,6 +100,8 @@ namespace online_school
             MenuItem(5, "Cursuri disponibile");
             MenuItem(6, "Inscrie-te la un curs");
             MenuItem(7, "Renunta la un curs");
+            MenuItem(8, "Total de plata");
+            MenuItem(9, "Profil");
             Console.WriteLine();
 
             MenuItem(0, "Iesire");
@@ -293,6 +307,11 @@ namespace online_school
             }
 
             Pause();
+
+            if (selectedCourse.StartDate.Date < DateTime.Today)
+            {
+                Console.WriteLine("Cursul a inceput deja.");
+            }
         }
 
         private void LeaveCourse()
@@ -488,5 +507,54 @@ namespace online_school
             Console.Write("  Apasa Enter pentru meniu...");
             Console.ReadLine();
         }
+        private void ShowTotalPayment()
+        {
+            var enrolments = enrolmentRepository.GetByStudentId(student.id);
+            decimal total = 0m;
+
+            foreach (var enrolment in enrolments)
+            {
+                var course = courseRepository.GetById(enrolment.CourseId);
+
+                if (course != null)
+                {
+                    total = total + course.Price;
+                }
+            }
+
+            Console.WriteLine("Total de plata: " + total.ToString("F2") + " lei");
+        }
+
+        private void ShowProfile()
+        {
+            Console.WriteLine("ID: " + student.id);
+            Console.WriteLine("Nume: " + student.FirstName + " " + student.LastName);
+            Console.WriteLine("Email: " + student.Email);
+
+
+            Console.Write("Doresti sa schimbi parola? (da/nu): ");
+            string answer = Console.ReadLine();
+
+            if (!string.Equals(answer, "da", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            Console.Write("Parola noua: ");
+            string newPassword = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(newPassword))
+            {
+                Console.WriteLine("Parola nu poate fi goala.");
+                return;
+            }
+
+            student.Password = newPassword;
+            studentRepository.Update(student);
+
+
+            Console.WriteLine("Parola a fost schimbata.");
+        }
+
     }
 }
